@@ -1,11 +1,23 @@
-import Chat from './Chat';
+"use client";
 
-export default function Home() {
+import Chat from "./Chat";
+import "./home.css";
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl bg-white rounded-xl shadow-lg flex flex-col h-[80vh]">
-        <div className="p-4 border-b text-xl font-semibold">🏋️ Fitness Chatbot</div>
+    <main className="home-container">
+      <div className="chat-box">
+        <h1 className="chat-title">Your Personal Fitness Chatbot</h1>
+        <p className="chat-subtitle">
+          Ask questions about workouts, nutrition, recovery, and anything else related to your fitness goals.
+        </p>
+
+        {/* Use the Chat component that connects to the OpenAI API */}
         <Chat />
+
+        <footer className="chat-footer">
+          Built with Next.js and OpenAI API
+        </footer>
       </div>
     </main>
   );
